@@ -13,9 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var constraintCenterYContentView: NSLayoutConstraint!
     
+    @IBOutlet weak var txtUsuario: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        txtUsuario.placeholder = "Usuario"
+        txtPassword.placeholder = "Contraseña"
     }
     
     @IBAction func clickBtnCloseKeyboard(_ sender: Any){
@@ -40,7 +47,7 @@ class ViewController: UIViewController {
         let finalPosyContentView = self.contentView.frame.origin.y + self.contentView.frame.height
         
         var delta: CGFloat = 0
-        let spaceKeyboardToContent: CGFloat = 20
+        let spaceKeyboardToContent: CGFloat = 25
         
         if keyboardOrigin < finalPosyContentView{
             delta = keyboardOrigin - finalPosyContentView - spaceKeyboardToContent
